@@ -1,0 +1,20 @@
+{
+  "name": "mars-rover",
+  "version": "1.0.0",
+  "description": "Mars rover solution for multiverse interview",
+  "main": "mars-rover.js",
+  "type": "module",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FlinnBurgess/mars-rover.git"
+  },
+  "author": "Flinn Burgess",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FlinnBurgess/mars-rover/issues"
+  },
+  "homepage": "https://github.com/FlinnBurgess/mars-rover#readme"
+}
