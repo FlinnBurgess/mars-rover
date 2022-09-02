@@ -16,3 +16,5 @@ This program takes in information about an area of Mars and a number of differen
 
 -   Making the required input less rigid / more resilient. e.g. not enforcing grid size information to appear first, handling extra spaces between values
 -   Not enabling rovers to occupy the same space
+-   Warning when a rovers starting coordinates fall outside the bounds of the grid
+-   Protect against a grid size of 0

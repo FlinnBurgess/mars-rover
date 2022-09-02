@@ -1,29 +1,46 @@
+const validGridSizeRegex = /\d+ \d+/
+const validRoverDetailsRegex = /\((\d+), (\d+), ([NESW])\) ([FLR]+)/
+
 function extractSceneDetails(inputText) {
     const inputRows = inputText.split('\n')
     const gridSizeDetails = inputRows[0]
-    if (!/\d \d/.test(gridSizeDetails)) {
+    if (!/\d+ \d+/.test(gridSizeDetails)) {
         throw new Error('No valid grid dimensions provided')
     }
 
     const [maxX, maxY] = gridSizeDetails
         .split(' ')
-        .map((coord) => Number(coord))
+        .map((coord) => Number(coord) - 1)
 
-    // Loop over the remaining rows, check that (after stripping out whitespace) they have the format "(X,Y,<bearing>)[LFR]+"
-    // If a row does have that format, create a rover out of that information
-    // If it doesn't, add the details to a list of malformed input strings
-    // If there are no valid rover input strings, throw a validation error
+    const rovers = []
+    const roverDetails = inputRows.slice(1)
+
+    roverDetails.forEach((roverDetailsItem) => {
+        roverDetailsItem = roverDetailsItem.trim()
+        if (!validRoverDetailsRegex.test(roverDetailsItem)) {
+            console.warn(`Invalid rover details found: ${roverDetailsItem}`)
+        } else {
+            const regexResult = validRoverDetailsRegex.exec(roverDetailsItem)
+            rovers.push({
+                x: Number(regexResult[1]),
+                y: Number(regexResult[2]),
+                orientation: regexResult[3],
+                remainingInstructions: regexResult[4],
+            })
+        }
+    })
+
+    if (rovers.length === 0) {
+        throw new Error('No valid rover details provided')
+    }
+
     // If there are valid rover input strings, but also invalid ones, log a warning about the invalid strings
 
     // Return an object:
     return {
-        xMax: 0,
-        yMax: 0,
-        rovers: [
-            { x: 0, y: 0, remainingInstructions: 'LFFRFRFFL' },
-            { x: 0, y: 0, remainingInstructions: 'LFFRFRFFL' },
-            { x: 0, y: 0, remainingInstructions: 'LFFRFRFFL' },
-        ],
+        maxX,
+        maxY,
+        rovers,
     }
 }
 
