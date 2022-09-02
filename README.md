@@ -4,11 +4,19 @@ This program takes in information about an area of Mars and a number of differen
 
 ## Requirements
 
--   (Node)[https://docs.npmjs.com/downloading-and-installing-node-js-and-npm] (tested with node v18.7.0)
+-   [Node](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) (tested with node v18.7.0)
 
 ## Usage
 
+-   From the project root, run `npm install` to install dependencies
+-   Run `npm start`
+    -   By default, the program will use `src/input.txt` as its input file
+    -   To use a different file, place it in `src/<filename>` and run the command `node . --input filename` from the project root
+
 ## Tests
+
+-   From the project root, run `npm install` to install dependencies
+-   Run `npm test`
 
 ## Assumptions
 
