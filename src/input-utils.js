@@ -1,7 +1,13 @@
 function extractSceneDetails(inputText) {
-    // find the index of the row in the text in the form "m n" where both are integers (assumption: m = width, n = height)
-    // if no such row is found, throw a validation error
-    // if one is found, parse it and remove it from the rows
+    const inputRows = inputText.split('\n')
+    const gridSizeDetails = inputRows[0]
+    if (!/\d \d/.test(gridSizeDetails)) {
+        throw new Error('No valid grid dimensions provided')
+    }
+
+    const [maxX, maxY] = gridSizeDetails
+        .split(' ')
+        .map((coord) => Number(coord))
 
     // Loop over the remaining rows, check that (after stripping out whitespace) they have the format "(X,Y,<bearing>)[LFR]+"
     // If a row does have that format, create a rover out of that information
@@ -14,10 +20,10 @@ function extractSceneDetails(inputText) {
         xMax: 0,
         yMax: 0,
         rovers: [
-            {x: 0, y: 0, remainingInstructions: 'LFFRFRFFL'},
-            {x: 0, y: 0, remainingInstructions: 'LFFRFRFFL'},
-            {x: 0, y: 0, remainingInstructions: 'LFFRFRFFL'},
-        ]
+            { x: 0, y: 0, remainingInstructions: 'LFFRFRFFL' },
+            { x: 0, y: 0, remainingInstructions: 'LFFRFRFFL' },
+            { x: 0, y: 0, remainingInstructions: 'LFFRFRFFL' },
+        ],
     }
 }
 

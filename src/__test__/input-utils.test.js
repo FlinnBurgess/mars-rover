@@ -6,7 +6,7 @@ describe('Extracting scene details', () => {
     it('should throw error if grid dimensions are missing', () => {
         const inputString = '(2, 3, E) LFRFF'
 
-        expect(extractSceneDetails(inputString)).toThrow(
+        expect(() => extractSceneDetails(inputString)).toThrow(
             'No valid grid dimensions provided'
         )
     })
@@ -14,7 +14,7 @@ describe('Extracting scene details', () => {
     it('should throw error if no valid rover details are provided', () => {
         const inputString = `4 8
         (bing, bong, wrong) LFRLFL`
-        expect(extractSceneDetails(inputString)).toThrow(
+        expect(() => extractSceneDetails(inputString)).toThrow(
             'No valid rover details provided'
         )
     })
