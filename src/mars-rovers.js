@@ -52,14 +52,15 @@ function simulateMarsRovers(inputString) {
     const executeRoverInstructions = (rover) => {
         while (rover.remainingInstructions.length > 0 && !rover.lost) {
             const instruction = rover.remainingInstructions[0]
-            if (instruction === 'F') {
-                moveRoverForward(rover)
-            }
-            if (instruction === 'R') {
-                rotateRoverClockwise(rover)
-            }
-            if (instruction === 'L') {
-                rotateRoverCounterclockwise(rover)
+            switch (instruction) {
+                case 'F':
+                    moveRoverForward(rover)
+                    break
+                case 'R':
+                    rotateRoverClockwise(rover)
+                    break
+                case 'L':
+                    rotateRoverCounterclockwise(rover)
             }
 
             rover.remainingInstructions = rover.remainingInstructions.slice(1)
