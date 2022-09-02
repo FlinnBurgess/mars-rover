@@ -4,7 +4,11 @@ This program takes in information about an area of Mars and a number of differen
 
 ## Requirements
 
+-   (Node)[https://docs.npmjs.com/downloading-and-installing-node-js-and-npm] (tested with node v18.7.0)
+
 ## Usage
+
+## Tests
 
 ## Assumptions
 
