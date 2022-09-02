@@ -2,10 +2,10 @@
   "name": "mars-rover",
   "version": "1.0.0",
   "description": "Mars rover solution for multiverse interview",
-  "main": "mars-rover.js",
-  "type": "module",
+  "main": "src/mars-rover.js",
   "scripts": {
-    "test": "test"
+    "start": "node . --input input.txt",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/FlinnBurgess/mars-rover/issues"
   },
-  "homepage": "https://github.com/FlinnBurgess/mars-rover#readme"
+  "homepage": "https://github.com/FlinnBurgess/mars-rover#readme",
+  "dependencies": {
+    "yargs": "^17.5.1"
+  },
+  "devDependencies": {
+    "jest": "^29.0.1"
+  }
 }
