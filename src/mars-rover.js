@@ -12,8 +12,8 @@ const options = yargs(hideBin(process.argv))
         demandOption: true,
     }).argv
 
-function marsRover() {
+function simulateMarsRovers(inputString) {
     console.log('hello world')
 }
 
-module.exports = marsRover
+module.exports = simulateMarsRovers
