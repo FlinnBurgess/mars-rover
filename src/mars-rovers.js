@@ -45,6 +45,7 @@ function simulateMarsRovers(inputString) {
 
     const rotateRoverCounterclockwise = (rover) => {
         const orientationIdx = orientations.indexOf(rover.orientation)
+        // JS remainder doesn't handle negative numbers like modulo would, but an equivalent to -1 is +3
         rover.orientation = orientations[(orientationIdx + 3) % 4]
     }
 

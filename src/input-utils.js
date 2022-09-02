@@ -34,9 +34,6 @@ function extractSceneDetails(inputText) {
         throw new Error('No valid rover details provided')
     }
 
-    // If there are valid rover input strings, but also invalid ones, log a warning about the invalid strings
-
-    // Return an object:
     return {
         maxX,
         maxY,

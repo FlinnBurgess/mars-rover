@@ -2,6 +2,7 @@
 const fs = require('fs')
 const yargs = require('yargs')
 const { hideBin } = require('yargs/helpers')
+const simulateMarsRovers = require('./mars-rovers')
 const options = yargs(hideBin(process.argv))
     .usage('Usage: --input <filename>')
     .option('input', {
@@ -12,3 +13,11 @@ const options = yargs(hideBin(process.argv))
     }).argv
 
 const filename = options.input ?? 'input.txt'
+
+fs.readFile(`${__dirname}/${filename}`, 'utf8', (err, data) => {
+    if (err) {
+        console.error(err)
+        return
+    }
+    simulateMarsRovers(data)
+})
