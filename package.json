@@ -2,7 +2,7 @@
   "name": "mars-rover",
   "version": "1.0.0",
   "description": "Mars rover solution for multiverse interview",
-  "main": "src/mars-rover.js",
+  "main": "src/main.js",
   "scripts": {
     "start": "node . --input input.txt",
     "test": "jest"

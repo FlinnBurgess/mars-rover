@@ -2,7 +2,6 @@
 const fs = require('fs')
 const yargs = require('yargs')
 const { hideBin } = require('yargs/helpers')
-
 const options = yargs(hideBin(process.argv))
     .usage('Usage: --input <filename>')
     .option('input', {
@@ -12,8 +11,4 @@ const options = yargs(hideBin(process.argv))
         demandOption: true,
     }).argv
 
-function simulateMarsRovers(inputString) {
-    console.log('hello world')
-}
-
-module.exports = simulateMarsRovers
+const filename = options.input ?? 'input.txt'

@@ -18,3 +18,4 @@ This program takes in information about an area of Mars and a number of differen
 -   Not enabling rovers to occupy the same space
 -   Warning when a rovers starting coordinates fall outside the bounds of the grid
 -   Protect against a grid size of 0
+-   Using TypeScript instead to aid with development process
