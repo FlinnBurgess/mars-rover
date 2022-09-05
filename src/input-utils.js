@@ -4,7 +4,7 @@ const validRoverDetailsRegex = /\((\d+), (\d+), ([NESW])\) ([FLR]+)/
 function extractSceneDetails(inputText) {
     const inputRows = inputText.split('\n')
     const gridSizeDetails = inputRows[0]
-    if (!/\d+ \d+/.test(gridSizeDetails)) {
+    if (!validGridSizeRegex.test(gridSizeDetails)) {
         throw new Error('No valid grid dimensions provided')
     }
 
